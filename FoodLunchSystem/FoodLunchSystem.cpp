@@ -5,8 +5,18 @@
 
 using namespace std;
 
+void line()
+{
+	cout << "\n";
+	for (int i = 0; i < 50; i++)
+	{
+		cout << "~";
+	}
+	cout << "\n";
+}
+
 int main()
 {
-    std::cout << "Hello World!\n";
-    
+    cout << "Welcome you little fucking piss ant";
+	line();
 }
