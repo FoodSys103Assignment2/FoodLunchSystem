@@ -19,6 +19,19 @@ int main()
 	menu();
 	cin >> mainMenu;
 	mainMenu = tolower(mainMenu);
+
+	if (mainMenu == 'f')
+	{
+
+	}
+	else if (mainMenu == 'a')
+	{
+
+	}
+	else if (mainMenu == 'b')
+	{
+
+	}
 }
 
 void menu()
