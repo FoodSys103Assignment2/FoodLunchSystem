@@ -5,6 +5,27 @@
 
 using namespace std;
 
+void menu();
+void line();
+
+int main()
+{
+    cout << "Welcome you little fucking piss ant";
+	line();
+
+	cout << "Main Menu";
+	line();
+	char mainMenu;
+	menu();
+	cin >> mainMenu;
+	mainMenu = tolower(mainMenu);
+}
+
+void menu()
+{
+	cout << "[F]ood menu\n[A]llergies menu\n[B]usiness info\n\nUser input: ";
+}
+
 void line()
 {
 	cout << "\n";
@@ -13,10 +34,4 @@ void line()
 		cout << "~";
 	}
 	cout << "\n";
-}
-
-int main()
-{
-    cout << "Welcome you little fucking piss ant";
-	line();
 }
