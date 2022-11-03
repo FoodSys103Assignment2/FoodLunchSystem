@@ -20,17 +20,21 @@ int main()
 	cin >> mainMenu;
 	mainMenu = tolower(mainMenu);
 
-	if (mainMenu == 'f')
-	{
 
-	}
-	else if (mainMenu == 'a')
-	{
 
-	}
-	else if (mainMenu == 'b')
+	switch (mainMenu)
 	{
-
+		case 'f':
+			cout << "Nice f";
+			break;
+		case 'a':
+			cout << "Nice a";
+			break;
+		case'b':
+			cout << "Nice b";
+			break;
+		default:
+			break;
 	}
 }
 
