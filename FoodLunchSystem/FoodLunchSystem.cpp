@@ -58,6 +58,9 @@ void foodMenu()
 	for (int i = 0; i < 4; i++) {
 		cout << i + 1 << " " << foodArray[i] << "\n";
 	}
+	cout << "Add item: ";
+	int foodChoice;
+	cin >> foodChoice;
 }
 
 void menu()
