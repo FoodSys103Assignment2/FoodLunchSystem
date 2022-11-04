@@ -28,7 +28,7 @@ int main()
 	cin >> mainMenu;
 	mainMenu = tolower(mainMenu);
 
-
+	cout << "e";
 
 	switch (mainMenu)
 	{
