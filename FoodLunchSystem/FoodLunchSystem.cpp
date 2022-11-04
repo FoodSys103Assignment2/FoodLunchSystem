@@ -36,8 +36,8 @@ int main()
 		case 'f':
 			line();
 			cout << "Food Menu\n\n";
-			for (int i = 0; i <= 4; i++) {
-				cout << foodArray[i] << "\n"; 
+			for (int i = 0; i < 4; i++) {
+				cout << i + 1 << " " << foodArray[i] << "\n"; 
 			}
 			break;
 		case 'V':
