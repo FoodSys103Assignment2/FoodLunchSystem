@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
 
 using namespace std;
 
@@ -13,7 +14,12 @@ void line();
 
 int main()
 {
-	fstream foodFile("Food.txt");
+	//fstream foodFile;
+	//foodFile.open("Food.txt", ios::out); //write
+	//foodFile << "First line\n";
+	//foodFile.close();
+
+	string foodArray[4] = { "Hot Dog", "Chicken And Rice", "Beans On Toast", "Apple" };
 
 	line();
 	cout << "\tMain Menu";
@@ -28,13 +34,16 @@ int main()
 	switch (mainMenu)
 	{
 		case 'f':
-			cout << "Food Menu\n";
+			line();
+			cout << "Food Menu\n\n";
 			break;
 		case 'V':
-			cout << "Current order\n";
+			line();
+			cout << "Current order\n\n";
 			break;
 		case'E':
-			cout << "Exit\n";
+			line();
+			cout << "Exit\n\n";
 			return 0;
 			break;
 		default:
