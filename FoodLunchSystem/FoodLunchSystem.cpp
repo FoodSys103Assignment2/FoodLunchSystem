@@ -2,18 +2,21 @@
 //
 
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
 void menu();
 void line();
 
+
+
 int main()
 {
-    cout << "Welcome you little fucking piss ant";
-	line();
+	fstream foodFile("Food.txt");
 
-	cout << "Main Menu";
+	line();
+	cout << "\tMain Menu";
 	line();
 	char mainMenu;
 	menu();
@@ -25,22 +28,27 @@ int main()
 	switch (mainMenu)
 	{
 		case 'f':
-			cout << "Nice f";
+			cout << "Food Menu\n";
 			break;
-		case 'a':
-			cout << "Nice a";
+		case 'V':
+			cout << "Current order\n";
 			break;
-		case'b':
-			cout << "Nice b";
+		case'E':
+			cout << "Exit\n";
+			return 0;
 			break;
 		default:
 			break;
 	}
 }
 
+
+
+
+
 void menu()
 {
-	cout << "[F]ood menu\n[A]llergies menu\n[B]usiness info\n\nUser input: ";
+	cout << "[F]ood menu\n[V]iew order\n[E]xit\n\ninput: ";
 }
 
 void line()
