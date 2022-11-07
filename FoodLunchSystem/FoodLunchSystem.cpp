@@ -18,24 +18,19 @@ int main()
 	//foodFile << "First line\n";
 	//foodFile.close();
 
-	
-
 	line();
-	cout << "\tMain Menu";
+	cout << "Main Menu\n";
 	line();
 	char mainMenu;
 	menu();
 	cin >> mainMenu;
 	mainMenu = tolower(mainMenu);
 
-	cout << "e";
-
 	switch (mainMenu)
 	{
 		case 'f':
 			line();
 			foodMenu();
-			
 			break;
 		case 'V':
 			line();
@@ -53,7 +48,7 @@ int main()
 
 void foodMenu()
 {
-	string foodArray[4] = { "Hot Dog", "Chicken And Rice", "Beans On Toast", "Apple" };
+	string foodArray[4] = { "Hot Dog, $5", "Chicken And Rice, $7", "Beans On Toast, $100", "Apple, $ 2" };
 	cout << "Food Menu\n\n";
 	for (int i = 0; i < 4; i++) {
 		cout << i + 1 << " " << foodArray[i] << "\n";
@@ -61,6 +56,8 @@ void foodMenu()
 	cout << "Add item: ";
 	int foodChoice;
 	cin >> foodChoice;
+
+
 }
 
 void menu()
@@ -70,7 +67,6 @@ void menu()
 
 void line()
 {
-	cout << "\n";
 	for (int i = 0; i < 50; i++)
 	{
 		cout << "~";
