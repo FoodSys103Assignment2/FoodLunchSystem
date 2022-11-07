@@ -48,7 +48,7 @@ int main()
 
 void foodMenu()
 {
-	string foodArray[4] = { "Hot Dog, $5", "Chicken And Rice, $7", "Beans On Toast, $100", "Apple, $ 2" };
+	string foodArray[4] = { "Hot Dog, \t\t$5", "Chicken And Rice, \t$7", "Beans On Toast, \t$100", "Apple, \t\t$2" };
 	cout << "Food Menu\n\n";
 	for (int i = 0; i < 4; i++) {
 		cout << i + 1 << " " << foodArray[i] << "\n";
