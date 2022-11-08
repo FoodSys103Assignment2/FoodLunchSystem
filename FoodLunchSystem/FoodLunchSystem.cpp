@@ -60,8 +60,10 @@ void foodMenu()
 	cout << "Add item: ";
 	int foodChoice;
 	cin >> foodChoice;
-
-
+	foodChoice--;
+	if (foodChoice < 4 && foodChoice >= 0)
+		
+		cout << foodArray[foodChoice] << " added to order. ";
 }
 
 void menu()
