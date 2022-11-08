@@ -7,6 +7,7 @@
 
 using namespace std;
 
+void registerUser();
 void foodMenu();
 void menu();
 void line();
@@ -33,6 +34,7 @@ int main()
 			while (true)
 			{
 				foodMenu();
+			}
 			break;
 		case 'v':
 			line();
