@@ -30,7 +30,9 @@ int main()
 	{
 		case 'f':
 			line();
-			foodMenu();
+			while (true)
+			{
+				foodMenu();
 			break;
 		case 'v':
 			line();
@@ -40,6 +42,7 @@ int main()
 			line();
 		case'r':
 			line();
+			registerUser();
 		case'e':
 			line();
 			cout << "Exit\n\n";
@@ -48,6 +51,19 @@ int main()
 		default:
 			break;
 	}
+}
+
+void registerUser()
+{
+	cout << "Please enter a username: ";
+	string registeredName;
+	cin >> registeredName;
+	cout << "Enter your school ID: ";
+	string registeredID;
+	cin >> registeredID;
+	cout << "Please enter a password: ";
+	string registeredPassword;
+	cin >> registeredPassword;
 }
 
 void foodMenu()
@@ -62,8 +78,9 @@ void foodMenu()
 	cin >> foodChoice;
 	foodChoice--;
 	if (foodChoice < 4 && foodChoice >= 0)
-		
-		cout << foodArray[foodChoice] << " added to order. ";
+	{
+		cout << foodArray[foodChoice] << " added to order. \n";
+	}
 }
 
 void menu()
