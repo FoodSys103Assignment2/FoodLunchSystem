@@ -32,11 +32,15 @@ int main()
 			line();
 			foodMenu();
 			break;
-		case 'V':
+		case 'v':
 			line();
 			cout << "Current order\n\n";
 			break;
-		case'E':
+		case'l':
+			line();
+		case'r':
+			line();
+		case'e':
 			line();
 			cout << "Exit\n\n";
 			return 0;
@@ -62,7 +66,7 @@ void foodMenu()
 
 void menu()
 {
-	cout << "[F]ood menu\n[V]iew order\n[E]xit\n\ninput: ";
+	cout << "[F]ood menu\n[V]iew order\n[E]xit\n[L]og in to Account\n[R]egister Account\n\ninput: ";
 }
 
 void line()
