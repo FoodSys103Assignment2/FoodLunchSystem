@@ -7,6 +7,7 @@
 
 using namespace std;
 
+bool userLogin();
 bool registerUser();
 void foodMenu();
 void menu();
@@ -42,6 +43,7 @@ int main()
 			break;
 		case'l':
 			line();
+			userLogin();
 		case'r':
 			line();
 			if (!registerUser())
@@ -56,6 +58,10 @@ int main()
 		default:
 			break;
 	}
+}
+
+bool userLogin() 
+{
 }
 
 bool registerUser()
