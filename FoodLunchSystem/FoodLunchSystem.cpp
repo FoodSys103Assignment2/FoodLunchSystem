@@ -60,8 +60,9 @@ int main()
 	}
 }
 
-bool userLogin() 
+bool userLogin()
 {
+	return false;
 }
 
 bool registerUser()
