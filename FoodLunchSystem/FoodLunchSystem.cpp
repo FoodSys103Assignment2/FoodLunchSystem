@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 
 using namespace std;
@@ -62,6 +63,15 @@ int main()
 
 bool userLogin()
 {
+
+	ifstream openFile;
+	stringstream userFile;
+
+	cout << "Enter your school ID: ";
+	string userID;
+	cin >> userID;
+	openFile.open("./registeredAccounts/user-" + userID + ".deeez");
+
 	return false;
 }
 
