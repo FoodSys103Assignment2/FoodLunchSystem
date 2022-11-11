@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void registerUser();
+bool registerUser();
 void foodMenu();
 void menu();
 void line();
@@ -44,7 +44,13 @@ int main()
 			line();
 		case'r':
 			line();
-			registerUser();
+			if (registerUser())
+			{
+			}
+			else
+			{
+				cout << "User was already taken\n\n";
+			}
 		case'e':
 			line();
 			cout << "Exit\n\n";
@@ -55,7 +61,7 @@ int main()
 	}
 }
 
-void registerUser(string)
+bool registerUser()
 {
 	cout << "Enter your school ID: ";
 	string registeredID;
@@ -63,6 +69,26 @@ void registerUser(string)
 	cout << "Please enter a password: ";
 	string registeredPassword;
 	cin >> registeredPassword;
+
+	string filename = "./registeredAccounts/user-" + registeredID + ".deeez";
+
+	ifstream fileCheck;
+	fileCheck.open(filename);
+	if (fileCheck.is_open())
+	{
+		fileCheck.close();
+		return false;
+	}
+
+	ofstream newFile;
+	newFile.open(filename);
+	if (!newFile.is_open())
+	{
+		return false;
+	}
+	newFile << "id:" << registeredID << "\npassword:" << registeredPassword;
+	newFile.close();
+	return true;
 }
 
 void foodMenu()
