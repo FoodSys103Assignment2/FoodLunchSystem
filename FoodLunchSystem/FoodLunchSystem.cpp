@@ -44,10 +44,7 @@ int main()
 			line();
 		case'r':
 			line();
-			if (registerUser())
-			{
-			}
-			else
+			if (!registerUser())
 			{
 				cout << "User was already taken\n\n";
 			}
