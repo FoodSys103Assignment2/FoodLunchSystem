@@ -55,11 +55,8 @@ int main()
 	}
 }
 
-void registerUser()
+void registerUser(string)
 {
-	cout << "Please enter a username: ";
-	string registeredName;
-	cin >> registeredName;
 	cout << "Enter your school ID: ";
 	string registeredID;
 	cin >> registeredID;
