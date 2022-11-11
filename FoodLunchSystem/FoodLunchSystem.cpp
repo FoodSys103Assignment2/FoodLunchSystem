@@ -30,9 +30,9 @@ int main()
 	switch (mainMenu)
 	{
 		case 'f':
-			line();
 			while (true)
 			{
+				line();
 				foodMenu();
 			}
 			break;
@@ -71,6 +71,7 @@ void registerUser()
 void foodMenu()
 {
 	string foodArray[4] = { "Hot Dog, \t\t$5", "Chicken And Rice, \t$7", "Beans On Toast, \t$100", "Apple, \t\t$2" };
+
 	cout << "Food Menu\n\n";
 	for (int i = 0; i < 4; i++) {
 		cout << i + 1 << " " << foodArray[i] << "\n";
