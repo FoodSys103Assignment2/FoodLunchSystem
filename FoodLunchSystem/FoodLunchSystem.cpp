@@ -20,7 +20,7 @@ int main()
 	//foodFile.open("Food.txt", ios::out); //write
 	//foodFile << "First line\n";
 	//foodFile.close();
-
+	start:
 	line();
 	cout << "Main Menu\n";
 	line();
@@ -45,12 +45,14 @@ int main()
 		case'l':
 			line();
 			userLogin();
+			goto start;
 		case'r':
 			line();
 			if (!registerUser())
 			{
 				cout << "User was already taken\n\n";
 			}
+			goto start;
 		case'e':
 			line();
 			cout << "Exit\n\n";
@@ -63,7 +65,6 @@ int main()
 
 bool userLogin()
 {
-
 	ifstream openFile;
 	stringstream userFile;
 
@@ -71,7 +72,7 @@ bool userLogin()
 	string userID;
 	cin >> userID;
 	openFile.open("./registeredAccounts/user-" + userID + ".deeez");
-
+	openFile.close();
 	return false;
 }
 
