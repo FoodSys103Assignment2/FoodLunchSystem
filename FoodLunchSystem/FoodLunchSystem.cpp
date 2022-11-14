@@ -114,13 +114,19 @@ void foodMenu()
 	for (int i = 0; i < 4; i++) {
 		cout << i + 1 << " " << foodArray[i] << "\n";
 	}
-	cout << "Add item: ";
+	
+	cout << "\n[10] ingridents menu \n\nAdd item: ";
 	int foodChoice;
 	cin >> foodChoice;
 	foodChoice--;
-	if (foodChoice < 4 && foodChoice >= 0)
-	{
+	if (foodChoice < 4 && foodChoice >= 0){
 		cout << foodArray[foodChoice] << " added to order. \n";
+	}
+	else if (foodChoice == 10) {
+		cout << "\nPlease select item to check: ";
+		int ingrList;
+		cin >> ingrList;
+		cout << foodArray[ingrList] << " ingridents are: \n";
 	}
 }
 
