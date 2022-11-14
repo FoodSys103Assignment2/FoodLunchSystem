@@ -133,14 +133,25 @@ void foodMenu()
 	if (foodChoice < 4 && foodChoice >= 0){
 		cout << foodArray[foodChoice] << " added to order. \n";
 	}
-	else if (foodChoice == 10) {
+	else if (foodChoice >= 10) {
+		string ingrLine;
 		cout << "\nPlease select item to check: ";
 		string ingrList; 
 		cin >> ingrList;
-		string checkFile = "./foodIngridents/" + ingrList + ".deeez";
-		ifstream ingrCheck;
-		ingrCheck.open(checkFile);
-		ingrCheck.close();
+		ifstream checkFile ("./foodIngridents/" + ingrList + ".deeez"); 
+		if (checkFile.is_open()) 
+		{
+			while (getline(checkFile, ingrLine)) {
+				// Output the text from the file
+				cout << ingrLine << "\n";
+			}
+			checkFile.close(); 
+		}
+		else
+		{
+			cout << "Unable to open file";
+		}
+	
 	}
 }
 
