@@ -127,6 +127,9 @@ void foodMenu()
 		int ingrList;
 		cin >> ingrList;
 		cout << foodArray[ingrList] << " ingridents are: \n";
+		string checkFile ="./foodIngridents/" + ingrList + ".deeez";
+		ifstream ingrCheck;
+		ingrCheck.open(checkFile);
 	}
 }
 
