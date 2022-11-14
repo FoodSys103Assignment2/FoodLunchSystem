@@ -1,2 +1,2 @@
 ﻿  FoodLunchSystem.cpp
-  FoodLunchSystem.vcxproj -> C:\Users\270238705\OneDrive - UP Education\Desktop\FoodLunchSystem\x64\Debug\FoodLunchSystem.exe
+C:\Users\270238705\OneDrive - UP Education\Desktop\FoodLunchSystem\FoodLunchSystem\FoodLunchSystem.cpp(130,62): error C2110: '+': cannot add two pointers
