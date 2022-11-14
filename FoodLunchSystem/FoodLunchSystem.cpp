@@ -65,6 +65,9 @@ int main()
 
 bool userLogin()
 {
+loginStart:
+	int line = 0;
+	string userInfo[2];
 	string info;
 
 	cout << "Input ID:";
@@ -76,13 +79,35 @@ bool userLogin()
 	{
 		while (getline(openfile, info)) {
 			// Output the text from the file
-			cout << info << "\n";
+			userInfo[line] = info;
+			cout <<"Line " << line << " " << userInfo[line] << "\n";
+			line++;
 		}
 		openfile.close();
+
 	}
 	else
 	{
-		cout << "Unable to open file";
+		cout << "User ID doesn't exist\n";
+		goto loginStart;
+	}
+	string passwordInput;
+	cout << "\nEnter password: ";
+	
+	cin >> passwordInput;
+
+	string actualPassword = "password:";
+
+	actualPassword += passwordInput;
+
+	if (actualPassword == userInfo[1])
+	{
+		cout << "Welcome student " << ID << "\n";
+	}
+	else
+	{
+		cout << "Wrong password try again\n";
+		goto loginStart;
 	}
 	return false;
 }
