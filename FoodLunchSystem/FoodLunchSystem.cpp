@@ -130,6 +130,7 @@ void foodMenu()
 		string checkFile ="./foodIngridents/" + ingrList + ".deeez";
 		ifstream ingrCheck;
 		ingrCheck.open(checkFile);
+		ingrCheck.close();
 	}
 }
 
