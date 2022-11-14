@@ -84,7 +84,6 @@ loginStart:
 			line++;
 		}
 		openfile.close();
-
 	}
 	else
 	{
