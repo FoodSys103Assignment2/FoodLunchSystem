@@ -65,14 +65,25 @@ int main()
 
 bool userLogin()
 {
-	ifstream openFile;
-	stringstream userFile;
+	string info;
 
-	cout << "Enter your school ID: ";
-	string userID;
-	cin >> userID;
-	openFile.open("./registeredAccounts/user-" + userID + ".deeez");
-	openFile.close();
+	cout << "Input ID:";
+	string ID;
+	cin >> ID;
+
+	ifstream openfile("./registeredAccounts/user-" + ID + ".deeez");
+	if (openfile.is_open())
+	{
+		while (getline(openfile, info)) {
+			// Output the text from the file
+			cout << info << "\n";
+		}
+		openfile.close();
+	}
+	else
+	{
+		cout << "Unable to open file";
+	}
 	return false;
 }
 
