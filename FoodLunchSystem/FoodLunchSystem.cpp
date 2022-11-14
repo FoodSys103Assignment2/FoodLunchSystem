@@ -124,10 +124,9 @@ void foodMenu()
 	}
 	else if (foodChoice == 10) {
 		cout << "\nPlease select item to check: ";
-		int ingrList;
+		string ingrList; 
 		cin >> ingrList;
-		cout << foodArray[ingrList] << " ingridents are: \n";
-		string checkFile ="./foodIngridents/" + ingrList + ".deeez";
+		string checkFile = "./foodIngridents/" + ingrList + ".deeez";
 		ifstream ingrCheck;
 		ingrCheck.open(checkFile);
 		ingrCheck.close();
