@@ -10,7 +10,7 @@ using namespace std;
 
 bool userLogin();
 bool registerUser();
-void foodMenu();
+bool foodMenu();
 void menu();
 void line();
 
@@ -35,7 +35,14 @@ int main()
 			while (true)
 			{
 				line();
-				foodMenu();
+				if (foodMenu() == false)
+				{
+					goto start;
+				}
+				else
+				{
+					foodMenu();
+				}
 			}
 			break;
 		case 'v':
@@ -141,7 +148,7 @@ bool registerUser()
 	return true;
 }
 
-void foodMenu()
+bool foodMenu()
 {
 	string foodArray[4] = { "Hot Dog, \t\t$5", "Chicken And Rice, \t$7", "Beans On Toast, \t$100", "Apple, \t\t$2" };
 
@@ -150,7 +157,7 @@ void foodMenu()
 		cout << i + 1 << " " << foodArray[i] << "\n";
 	}
 	
-	cout << "\n[10] ingridents menu \n\nAdd item: ";
+	cout << "\n[10] Ingredients menu\n[11] Go back\n\nAdd item: ";
 	int foodChoice;
 	cin >> foodChoice;
 	foodChoice--;
@@ -163,8 +170,8 @@ void foodMenu()
 			vCurr << foodArray[foodChoice] << "\n";
 			vCurr.close();
 		}
-
-	} else if (foodChoice == 9) {
+	} 
+	else if (foodChoice == 9) {
 		string ingrLine;
 		cout << "\nPlease select item to check: ";
 		string ingrList; 
@@ -182,7 +189,10 @@ void foodMenu()
 		{
 			cout << "Unable to open file";
 		}
-	
+	}
+	else if (foodChoice == 10)
+	{
+		return false;
 	}
 }
 
