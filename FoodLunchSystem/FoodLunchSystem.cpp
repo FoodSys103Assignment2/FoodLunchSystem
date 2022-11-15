@@ -156,7 +156,7 @@ void foodMenu()
 	foodChoice--;
 	if (foodChoice < 4 && foodChoice >= 0){
 		cout << foodArray[foodChoice] << " added to order. \n";
-		ifstream orderAdd ()
+		ifstream orderAdd();
 	} else if (foodChoice == 9) {
 		string ingrLine;
 		cout << "\nPlease select item to check: ";
