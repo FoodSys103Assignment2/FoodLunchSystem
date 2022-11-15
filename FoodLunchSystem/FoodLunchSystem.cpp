@@ -176,7 +176,9 @@ bool foodMenu()
 		cout << "\nPlease select item to check: ";
 		string ingrList; 
 		cin >> ingrList;
-		ifstream checkFile ("./foodIngridents/" + ingrList + ".deeez"); 
+		string checkAddress = "./foodIngridents/" + ingrList + ".deeez";
+		ifstream checkFile;  
+		checkFile.open(checkAddress);
 		if (checkFile.is_open()) 
 		{
 			while (getline(checkFile, ingrLine)) {
