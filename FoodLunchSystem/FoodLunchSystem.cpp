@@ -188,7 +188,7 @@ bool foodMenu()
 			checkFile.close(); 
 		}
 		else {
-			cout << "Unable to open file"; 
+			cout << "\nUnable to open file\n"; 
 		}
 	}
 	else if (foodChoice == 10) 
