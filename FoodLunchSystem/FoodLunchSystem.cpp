@@ -164,8 +164,8 @@ bool foodMenu()
 	if (foodChoice < 4 && foodChoice >= 0){
 		cout << "\n" << foodArray[foodChoice] << " added to order. \n";
 		string orderAdd = "./registeredAccounts/currOrder.deeez";
-		ofstream vCurr;
-		vCurr.open(orderAdd);
+		fstream vCurr;
+		vCurr.open(orderAdd, ios::app); 
 		if (vCurr.is_open()) {
 			vCurr << foodArray[foodChoice] << "\n";
 			vCurr.close();
