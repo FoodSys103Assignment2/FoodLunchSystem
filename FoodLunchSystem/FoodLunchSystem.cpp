@@ -199,7 +199,7 @@ bool foodMenu()
 
 void menu()
 {
-	cout << "[F]ood menu\n[V]iew order\n[E]xit\n[L]og in to Account\n[R]egister Account\n\ninput: ";
+	cout << "[F]ood menu\n[V]iew order\n[L]og in to Account\n[R]egister Account\n[E]xit\n\ninput: ";
 }
 
 void line()
