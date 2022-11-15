@@ -155,8 +155,15 @@ void foodMenu()
 	cin >> foodChoice;
 	foodChoice--;
 	if (foodChoice < 4 && foodChoice >= 0){
-		cout << foodArray[foodChoice] << " added to order. \n";
-		ifstream orderAdd();
+		cout << "\n" << foodArray[foodChoice] << " added to order. \n";
+		string orderAdd = "./registeredAccounts/currOrder.deeez";
+		ofstream vCurr;
+		vCurr.open(orderAdd);
+		if (vCurr.is_open()) {
+			vCurr << foodArray[foodChoice] << "\n";
+			vCurr.close();
+		}
+
 	} else if (foodChoice == 9) {
 		string ingrLine;
 		cout << "\nPlease select item to check: ";
