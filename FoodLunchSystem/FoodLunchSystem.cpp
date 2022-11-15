@@ -189,9 +189,9 @@ bool foodMenu()
 			cout << "Unable to open file"; 
 		}
 	}
-	else if (foodChoice == 10)  
+	else if (foodChoice == 10) 
 	{
-		return false; 
+		return false;
 	}
 }
 
