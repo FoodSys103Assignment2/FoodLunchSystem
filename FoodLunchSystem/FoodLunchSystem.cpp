@@ -11,6 +11,7 @@ using namespace std;
 bool userLogin();
 bool registerUser();
 bool foodMenu();
+bool viewOrder();
 void menu();
 void line();
 
@@ -48,6 +49,7 @@ int main()
 		case 'v':
 			line();
 			cout << "Current order\n\n";
+			viewOrder();
 			break;
 		case'l':
 			line();
@@ -87,7 +89,6 @@ loginStart:
 		while (getline(openfile, info)) {
 			// Output the text from the file
 			userInfo[line] = info;
-			cout <<"Line " << line << " " << userInfo[line] << "\n";
 			line++;
 		}
 		openfile.close();
@@ -195,6 +196,23 @@ bool foodMenu()
 	{
 		return false;
 	}
+}
+
+bool viewOrder() {
+	string pageLine;
+	ifstream fileOpen ("./registeredAccounts/currOrder.deeez");
+	if (fileOpen.is_open()) 
+	{
+		while (getline(fileOpen, pageLine)) {
+			// Output the text from the file
+			cout << pageLine << "\n"; 
+		}
+		fileOpen.close(); 
+	}
+	else {
+		cout << "\nUnable to open file\n";
+	}
+	return 0;
 }
 
 void menu()
