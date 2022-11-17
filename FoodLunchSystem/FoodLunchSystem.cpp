@@ -10,7 +10,7 @@ using namespace std;
 
 void accountMenu(string ID);
 string userLogin();
-bool registerUser();
+string registerUser();
 bool foodMenu();
 bool ingridentsList();
 bool viewOrder();
@@ -60,16 +60,17 @@ int main()
 			cout << "Current order\n\n";
 			viewOrder();
 			break;
-		case'l':
-			line();
-			ID = userLogin();
-			break;
 		case'r':
 			line();
-			if (!registerUser())
+			ID = registerUser();
+			if (ID.empty())
 			{
 				cout << "User was already taken\n\n";
 			}
+			break;
+		case'l':
+			line();
+			ID = userLogin();
 			break;
 		case's':
 			accountMenu(ID);
@@ -144,7 +145,7 @@ loginStart:
 	return ID;
 }
 
-bool registerUser()
+string registerUser()
 {
 	cout << "Enter your school ID: ";
 	string registeredID;
@@ -160,18 +161,18 @@ bool registerUser()
 	if (fileCheck.is_open())
 	{
 		fileCheck.close();
-		return false;
+		return "";
 	}
 
 	ofstream newFile;
 	newFile.open(filename);
 	if (!newFile.is_open())
 	{
-		return false;
+		return "";
 	}
 	newFile << "id:" << registeredID << "\npassword:" << registeredPassword;
 	newFile.close();
-	return true;
+	return registeredID;
 }
 
 bool foodMenu()
