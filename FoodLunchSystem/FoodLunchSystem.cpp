@@ -11,6 +11,7 @@ using namespace std;
 bool userLogin();
 bool registerUser();
 bool foodMenu();
+bool ingridentsList();
 bool viewOrder();
 void menu();
 void line();
@@ -50,6 +51,7 @@ int main()
 			line();
 			cout << "Current order\n\n";
 			viewOrder();
+			
 			break;
 		case'l':
 			line();
@@ -173,28 +175,38 @@ bool foodMenu()
 		}
 	} 
 	else if (foodChoice == 9) {
-		string ingrLine;
-		cout << "\nPlease select item to check: ";
-		string ingrList; 
-		cin >> ingrList;
-		//string checkAddress = "./foodIngridents/" + ingrList + ".deeez";
-		ifstream checkFile("./foodIngridents/" + ingrList + ".deeez");
-		if (checkFile.is_open()) 
-		{
-			while (getline(checkFile, ingrLine)) {
-				// Output the text from the file
-				cout << ingrLine << "\n";
-			}
-			checkFile.close(); 
-		}
-		else {
-			cout << "\nUnable to open file\n"; 
-		}
+		ingridentsList();
 	}
 	else if (foodChoice == 10) 
 	{
 		return false;
 	}
+}
+
+bool ingridentsList()
+{
+	int fileLine = 0;
+	string ingrInfo;
+	string ingr[4];
+	cout << "\nPlease select item to check: ";
+	cin >> ingrInfo;
+	//string checkAddress = "./foodIngridents/" + ingrList + ".deeez";
+	ifstream checkFile("./foodIngridents/food-" + ingrInfo + ".deeez");
+	cout << "\nIngridients for the selected food are:";
+	if (checkFile.is_open())
+	{
+		while (getline(checkFile, ingrInfo)) {
+			// Output the text from the file
+			cout << ingrInfo << "\n";
+		}
+		checkFile.close();
+		line();
+	}
+	else {
+		cout << "\nUnable to open file\n";
+		line();
+	}
+	return false;
 }
 
 bool viewOrder() {
