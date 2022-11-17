@@ -51,7 +51,6 @@ int main()
 			line();
 			cout << "Current order\n\n";
 			viewOrder();
-			
 			break;
 		case'l':
 			line();
@@ -187,7 +186,6 @@ bool ingridentsList()
 {
 	int fileLine = 0;
 	string ingrInfo;
-	string ingr[4];
 	cout << "\nPlease select item to check: ";
 	cin >> ingrInfo;
 	//string checkAddress = "./foodIngridents/" + ingrList + ".deeez";
