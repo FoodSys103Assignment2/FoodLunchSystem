@@ -8,7 +8,8 @@
 
 using namespace std;
 
-bool userLogin();
+void accountMenu(string ID);
+string userLogin();
 bool registerUser();
 bool foodMenu();
 bool ingridentsList();
@@ -18,28 +19,35 @@ void line();
 
 int main()
 {
-	//fstream foodFile;
-	//foodFile.open("Food.txt", ios::out); //write
-	//foodFile << "First line\n";
-	//foodFile.close();
-	start:
-	line();
-	cout << "Main Menu\n";
-	line();
-	char mainMenu;
-	menu();
-	cin >> mainMenu;
-	mainMenu = tolower(mainMenu);
-
-	switch (mainMenu)
+	string ID;
+	while (1)
 	{
+		line();
+		cout << "Main Menu\n";
+		if (!ID.empty())
+		{
+			cout << "\n\n\n\n\nCurrent User Is: " << ID << "\n";
+		}
+		else
+		{
+			cout << "\n\n\n\n\nNo User Signed In\n";
+		}
+		line();
+		char mainMenu;
+		menu();
+		cin >> mainMenu;
+		mainMenu = tolower(mainMenu);
+
+
+		switch (mainMenu)
+		{
 		case 'f':
 			while (true)
 			{
 				line();
-				if (foodMenu() == false)
+				if (!foodMenu())
 				{
-					goto start;
+					break;
 				}
 				else
 				{
@@ -54,15 +62,18 @@ int main()
 			break;
 		case'l':
 			line();
-			userLogin();
-			goto start;
+			ID = userLogin();
+			break;
 		case'r':
 			line();
 			if (!registerUser())
 			{
 				cout << "User was already taken\n\n";
 			}
-			goto start;
+			break;
+		case's':
+			accountMenu(ID);
+			break;
 		case'e':
 			line();
 			cout << "Exit\n\n";
@@ -70,10 +81,23 @@ int main()
 			break;
 		default:
 			break;
+		}
 	}
 }
 
-bool userLogin()
+void accountMenu(string ID)
+{
+	if (ID == "")
+	{
+		cout << "You aint signed in holmes\n";
+	}
+	else
+	{
+		cout << "You are in the sign bruh\n";
+	}
+}
+
+string userLogin()
 {
 loginStart:
 	int line = 0;
@@ -117,7 +141,7 @@ loginStart:
 		cout << "Wrong password try again\n";
 		goto loginStart;
 	}
-	return false;
+	return ID;
 }
 
 bool registerUser()
@@ -180,6 +204,7 @@ bool foodMenu()
 	{
 		return false;
 	}
+	return !(!(true));
 }
 
 bool ingridentsList()
