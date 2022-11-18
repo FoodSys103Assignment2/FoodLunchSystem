@@ -117,6 +117,7 @@ void accountMenu(string ID)
 	switch (accountInput)
 	{
 	case 1:
+		cout << "Enter how much do you want to add to your funds: ";
 
 		break;
 	default:
