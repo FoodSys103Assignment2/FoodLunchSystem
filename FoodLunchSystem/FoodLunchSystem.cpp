@@ -94,9 +94,8 @@ void accountMenu(string ID)
 	fstream addfunds;
 	addfunds.open(currentAccount, ios::app);
 
-
 	string accountFunds;
-	string accountInput;
+	int accountInput;
 	if (ID == "")
 	{
 		cout << "No user is currently signed in\n";
@@ -105,9 +104,17 @@ void accountMenu(string ID)
 	{
 		cout << "User:" << ID << "\n";
 	}
-
 	cout << "[1] Add funds to account\n[2] Billing info\n\nInput: ";
 	cin >> accountInput;
+
+	switch (accountInput)
+	{
+	case 1:
+
+		break;
+	default:
+		break;
+	}
 }
 
 string userLogin()
