@@ -8,6 +8,7 @@
 
 using namespace std;
 
+// Declearation of functions
 void accountMenu(string ID);
 string userLogin();
 string registerUser();
@@ -61,7 +62,7 @@ int main()
 			line();
 			cout << "Current order\n\n";
 			viewOrder();
-			cout << "\n\n[C]ear order\n[E]xit\n\n";
+			cout << "\n\n[C]lear order\n[E]xit\n\n";
 				char clearCheck; 
 				cin >> clearCheck; 
 				if (clearCheck == 'c'){clearOrder();}
