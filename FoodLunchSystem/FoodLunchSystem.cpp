@@ -20,7 +20,7 @@ void line();
 
 int main()
 {
-	void clearOrder();
+	clearOrder();
 	string ID; 
 	while (1)
 	{
