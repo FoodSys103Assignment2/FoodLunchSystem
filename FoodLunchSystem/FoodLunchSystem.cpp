@@ -61,7 +61,14 @@ int main()
 			line();
 			cout << "Current order\n\n";
 			viewOrder();
-			break;
+			cout << "\n\n[C]ear order\n[E]xit\n\n";
+				char clearCheck; 
+				cin >> clearCheck; 
+				if (clearCheck == 'c'){clearOrder();}
+				else {
+					break;
+				}
+				break;
 		case'r':
 			line();
 			ID = registerUser();
