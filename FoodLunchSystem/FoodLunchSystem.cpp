@@ -28,11 +28,11 @@ int main()
 		cout << "Main Menu\n";
 		if (!ID.empty())
 		{
-			cout << "\n\n\n\n\nCurrent User Is: " << ID << "\n";
+			cout << "\n\n\nCurrent User Is: " << ID << "\n";
 		}
 		else
 		{
-			cout << "\n\n\n\n\nNo User Signed In\n";
+			cout << "\n\n\nNo User Signed In\n";
 		}
 		line();
 		char mainMenu;
