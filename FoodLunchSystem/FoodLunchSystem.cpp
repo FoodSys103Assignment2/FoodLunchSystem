@@ -14,12 +14,14 @@ string registerUser();
 bool foodMenu();
 bool ingridentsList();
 bool viewOrder();
+void clearOrder(); 
 void menu();
 void line();
 
 int main()
 {
-	string ID;
+	void clearOrder();
+	string ID; 
 	while (1)
 	{
 		line();
@@ -248,6 +250,18 @@ bool viewOrder() {
 		cout << "\nUnable to open file\n";
 	}
 	return 0;
+}
+
+void clearOrder() {
+	string clearing;
+	ofstream clearOpen("./registeredAccounts/currOrder.deeez");
+	if (clearOpen.is_open())
+	{
+		clearOpen.close();
+	}
+	else {
+		cout << "\nUnable to open file\n";
+	}
 }
 
 void menu()
