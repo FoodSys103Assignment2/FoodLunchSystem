@@ -90,11 +90,11 @@ void accountInfo(string ID)
 {
 	if (ID == "")
 	{
-		cout << "You aint signed in holmes\n";
+		cout << "No user is currently signed in\n";
 	}
 	else
 	{
-		cout << "You are in the sign bruh\n";
+		cout << "User:" << ID << " has signed in\n";
 	}
 }
 
