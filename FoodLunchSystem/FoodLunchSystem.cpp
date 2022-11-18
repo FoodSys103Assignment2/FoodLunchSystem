@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void accountMenu(string ID);
+void accountInfo(string ID);
 string userLogin();
 string registerUser();
 bool foodMenu();
@@ -73,7 +73,7 @@ int main()
 			ID = userLogin();
 			break;
 		case's':
-			accountMenu(ID);
+			accountInfo(ID);
 			break;
 		case'e':
 			line();
@@ -86,7 +86,7 @@ int main()
 	}
 }
 
-void accountMenu(string ID)
+void accountInfo(string ID)
 {
 	if (ID == "")
 	{
@@ -252,7 +252,7 @@ bool viewOrder() {
 
 void menu()
 {
-	cout << "[F]ood menu\n[V]iew order\n[L]og in to Account\n[R]egister Account\n[E]xit\n\ninput: ";
+	cout << "[F]ood menu\n[V]iew order\n[L]og in to Account\n[R]egister Account\n[S]ettings\n[E]xit\n\ninput: ";
 }
 
 void line()
