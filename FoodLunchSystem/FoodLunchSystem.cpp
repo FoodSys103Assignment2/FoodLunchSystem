@@ -8,7 +8,7 @@
 
 using namespace std;
 
-// Declearation of functions and variables
+// Declearation of functions
 void accountMenu(string ID);
 string userLogin();
 string registerUser();
