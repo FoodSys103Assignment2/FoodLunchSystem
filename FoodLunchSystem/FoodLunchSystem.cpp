@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void accountInfo(string ID);
+void accountMenu(string ID);
 string userLogin();
 string registerUser();
 bool foodMenu();
@@ -75,7 +75,7 @@ int main()
 			ID = userLogin();
 			break;
 		case's':
-			accountInfo(ID);
+			accountMenu(ID);
 			break;
 		case'e':
 			line();
@@ -88,16 +88,26 @@ int main()
 	}
 }
 
-void accountInfo(string ID)
+void accountMenu(string ID)
 {
+	string currentAccount = "./registeredAccounts/user-" + ID + ".deeez";
+	fstream addfunds;
+	addfunds.open(currentAccount, ios::app);
+
+
+	string accountFunds;
+	string accountInput;
 	if (ID == "")
 	{
 		cout << "No user is currently signed in\n";
 	}
 	else
 	{
-		cout << "User:" << ID << " has signed in\n";
+		cout << "User:" << ID << "\n";
 	}
+
+	cout << "[1] Add funds to account\n[2] Billing info\n\nInput: ";
+	cin >> accountInput;
 }
 
 string userLogin()
