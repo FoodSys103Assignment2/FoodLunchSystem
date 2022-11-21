@@ -100,7 +100,7 @@ int main()
 	}
 }
 
-// function for account settings
+// function for displaying account settings and billing info.
 void accountMenu(string ID)
 {
 	string currentAccount = "./registeredAccounts/user-" + ID + ".deeez";
@@ -131,7 +131,7 @@ void accountMenu(string ID)
 	}
 }
 
-// function for logining into an existing account
+// function for logining into an existing account.
 string userLogin()
 {
 loginStart:
@@ -179,7 +179,7 @@ loginStart:
 	return ID;
 }
 
-// function for registering an account
+// function for registering an account of a new user.
 string registerUser()
 {
 	cout << "Enter your school ID: ";
@@ -210,7 +210,7 @@ string registerUser()
 	return registeredID;
 }
 
-// function for printing the menu of foods you can order
+// function for printing the menu of foods you can order.
 bool foodMenu()
 {
 	string foodArray[4] = { "Hot Dog, \t\t$5", "Chicken And Rice, \t$7", "Beans On Toast, \t$100", "Apple, \t\t$2" };
