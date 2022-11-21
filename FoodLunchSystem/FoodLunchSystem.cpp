@@ -21,10 +21,14 @@ void line();
 
 int main()
 {
+	// Calls the funtion which clears the file storing the order
 	clearOrder();
 	string ID; 
+
+	// while loop to for running the program until the user wants to end stop the application
 	while (1)
 	{
+		// Prints correct responses depending on if a user is signed in or not
 		line();
 		cout << "Main Menu\n";
 		if (!ID.empty())
@@ -36,12 +40,12 @@ int main()
 			cout << "\n\n\nNo User Signed In\n";
 		}
 		line();
+
+		// switch cases for navigation of the menu system to the correct functions
 		char mainMenu;
 		menu();
 		cin >> mainMenu;
 		mainMenu = tolower(mainMenu);
-
-
 		switch (mainMenu)
 		{
 		case 'f':
