@@ -96,6 +96,7 @@ int main()
 	}
 }
 
+// function for account settings
 void accountMenu(string ID)
 {
 	string currentAccount = "./registeredAccounts/user-" + ID + ".deeez";
@@ -126,6 +127,7 @@ void accountMenu(string ID)
 	}
 }
 
+// function for logining into an existing account
 string userLogin()
 {
 loginStart:
@@ -173,6 +175,7 @@ loginStart:
 	return ID;
 }
 
+// function for registering an account
 string registerUser()
 {
 	cout << "Enter your school ID: ";
@@ -203,6 +206,7 @@ string registerUser()
 	return registeredID;
 }
 
+// function for printing the menu of foods you can order
 bool foodMenu()
 {
 	string foodArray[4] = { "Hot Dog, \t\t$5", "Chicken And Rice, \t$7", "Beans On Toast, \t$100", "Apple, \t\t$2" };
@@ -236,6 +240,7 @@ bool foodMenu()
 	return !(!(true));
 }
 
+// function for printing the spicific food items ingrediant file.
 bool ingridentsList()
 {
 	int fileLine = 0;
@@ -261,6 +266,7 @@ bool ingridentsList()
 	return false;
 }
 
+// function for viewing contents from the current order file.
 bool viewOrder() {
 	string pageLine;
 	ifstream fileOpen ("./registeredAccounts/currOrder.deeez");
@@ -278,6 +284,7 @@ bool viewOrder() {
 	return 0;
 }
 
+// function for clearing contents of the current order file.
 void clearOrder() {
 	string clearing;
 	ofstream clearOpen("./registeredAccounts/currOrder.deeez");
@@ -290,11 +297,13 @@ void clearOrder() {
 	}
 }
 
+// function for printing the main menu options.
 void menu()
 {
 	cout << "[F]ood menu\n[V]iew order\n[L]og in to Account\n[R]egister Account\n[S]ettings\n[E]xit\n\ninput: ";
 }
 
+// function for printing a dividing line on screen.
 void line()
 {
 	for (int i = 0; i < 50; i++)
