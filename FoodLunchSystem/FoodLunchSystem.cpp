@@ -83,6 +83,7 @@ int main()
 			}
 			break;
 		case'l':
+			clearOrder(); 
 			line();
 			ID = userLogin();
 			break;
