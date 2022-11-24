@@ -105,14 +105,6 @@ int main()
 // function for displaying account settings and billing info.
 void accountMenu(string ID)
 {
-	/*string orderAddDrink = "./registeredAccounts/currOrder.deeez";
-	fstream dCurr;
-	dCurr.open(orderAddDrink, ios::app);
-	if (dCurr.is_open()) {
-		dCurr << drinkArray[drinkChoice] << "\n";
-		dCurr.close();
-	}*/
-
 	string currentAccount = "./registeredAccounts/user-" + ID + ".deeez";
 	fstream addInfo;
 
