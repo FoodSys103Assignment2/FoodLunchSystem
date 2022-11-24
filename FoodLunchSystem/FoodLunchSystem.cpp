@@ -18,6 +18,7 @@ bool viewOrder();
 void clearOrder(); 
 void menu();
 void line();
+bool drinksMenu();
 
 int main()
 {
@@ -214,14 +215,14 @@ string registerUser()
 // function for printing the menu of foods you can order.
 bool foodMenu()
 {
-	string foodArray[4] = { "Hot Dog, \t\t$5", "Chicken And Rice, \t$7", "Beans On Toast, \t$100", "Apple, \t\t$2" };
+	string foodArray[] = { "Hot Dog, \t\t$5", "Chicken And Rice, \t$7", "Beans On Toast, \t$100", "Apple, \t\t$2",};
 
 	cout << "Food Menu\n\n";
 	for (int i = 0; i < 4; i++) {
 		cout << i + 1 << " " << foodArray[i] << "\n";
 	}
 	
-	cout << "\n[10] Ingredients menu\n[11] Go back\n\nAdd item: ";
+	cout << "\n[10] Ingredients menu\n[11] Drink Menu\n[12] Go back\n\nAdd item: ";
 	int foodChoice;
 	cin >> foodChoice;
 	foodChoice--;
@@ -238,11 +239,47 @@ bool foodMenu()
 	else if (foodChoice == 9) {
 		ingridentsList();
 	}
-	else if (foodChoice == 10) 
+	else if (foodChoice == 10)
+	{
+		drinksMenu();
+	}
+	else if (foodChoice == 11) 
 	{
 		return false;
 	}
 	return !(!(true));
+}
+
+//
+bool drinksMenu()
+{
+	string drinkArray[8] = { "Coco-Cola 330ml, \t\t $2", "Coco-Cola 500ml, \t\t $3.5", "Sprite 330ml, \t\t $2", "Sprite 500ml, \t\t $3.5", "Fanta 330ml, \t\t $2", "Fanta 500ml, \t\t $3.5", "Mtn Dew 330ml, \t\t $2", "Mtn Dew 500ml, \t\t $3.5" };
+
+	cout << "Drinks Menu\n\n";
+	for (int i = 0; i < 8; i++)
+	{
+		cout << i + 1 << " " << drinkArray[i] << "\n";
+	}
+
+	cout << "\n[10] Go Back\n\nAdd item: ";
+	int drinkChoice;
+	cin >> drinkChoice;
+	drinkChoice--;
+	if (drinkChoice < 8 && drinkChoice >= 0){
+		cout << "\n" << drinkArray[drinkChoice] << " added to order. \n";
+		string orderAddDrink = "./registeredAccounts/currOrder.deeez";
+		fstream dCurr;
+		dCurr.open(orderAddDrink, ios::app);
+		if (dCurr.is_open()){
+			dCurr << drinkArray[drinkChoice] << "\n";
+			dCurr.close();
+		}
+	}
+	else if (drinkChoice == 9)
+	{
+		return false;
+	}
+	return true;
 }
 
 // function for printing the spicific food items ingrediant file.
