@@ -105,11 +105,18 @@ int main()
 // function for displaying account settings and billing info.
 void accountMenu(string ID)
 {
-	string currentAccount = "./registeredAccounts/user-" + ID + ".deeez";
-	fstream addfunds;
-	addfunds.open(currentAccount, ios::app);
+	/*string orderAddDrink = "./registeredAccounts/currOrder.deeez";
+	fstream dCurr;
+	dCurr.open(orderAddDrink, ios::app);
+	if (dCurr.is_open()) {
+		dCurr << drinkArray[drinkChoice] << "\n";
+		dCurr.close();
+	}*/
 
-	string accountFunds;
+	string currentAccount = "./registeredAccounts/user-" + ID + ".deeez";
+	fstream addInfo;
+
+	string accountInfo;
 	int accountInput;
 	if (ID == "")
 	{
@@ -121,15 +128,17 @@ void accountMenu(string ID)
 	}
 	cout << "[1] Add funds to account\n[2] Billing info\n\nInput: ";
 	cin >> accountInput;
-
-	switch (accountInput)
-	{
-	case 1:
+	
+	if (accountInput == 1)
+	{	
 		cout << "Enter how much do you want to add to your funds: ";
-
-		break;
-	default:
-		break;
+		cin >> accountInfo;
+		addInfo.open(currentAccount, ios::app);
+		if (addInfo.is_open())
+		{
+			addInfo << "\n" << accountInfo << "\n";
+			addInfo.close();
+		}
 	}
 }
 
@@ -253,7 +262,7 @@ bool foodMenu()
 //
 bool drinksMenu()
 {
-	string drinkArray[8] = { "Coco-Cola 330ml, \t\t $2", "Coco-Cola 500ml, \t\t $3.5", "Sprite 330ml, \t\t $2", "Sprite 500ml, \t\t $3.5", "Fanta 330ml, \t\t $2", "Fanta 500ml, \t\t $3.5", "Mtn Dew 330ml, \t\t $2", "Mtn Dew 500ml, \t\t $3.5" };
+	string drinkArray[8] = { "Coco-Cola 330ml, \t\t $2", "Coco-Cola 500ml, \t\t $3.5", "Sprite 330ml, \t\t $2", "Sprite 500ml, \t\t $3.5", "Fanta 330ml, \t\t\t $2", "Fanta 500ml, \t\t\t $3.5", "Mtn Dew 330ml, \t\t $2", "Mtn Dew 500ml, \t\t $3.5" };
 
 	cout << "Drinks Menu\n\n";
 	for (int i = 0; i < 8; i++)
@@ -291,7 +300,7 @@ bool ingridentsList()
 	cin >> ingrInfo;
 	//string checkAddress = "./foodIngridents/" + ingrList + ".deeez";
 	ifstream checkFile("./foodIngridents/food-" + ingrInfo + ".deeez");
-	cout << "\nIngridients for the selected food are:";
+	cout << "\nIngridients for the selected food are:\n";
 	if (checkFile.is_open())
 	{
 		while (getline(checkFile, ingrInfo)) {
