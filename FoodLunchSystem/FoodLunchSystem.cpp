@@ -236,10 +236,10 @@ loginStart:
 // function for registering an account of a new user.
 string registerUser()
 {
-	cout << "Enter your school ID: ";
+	cout << "Enter your school ID (NO SPACES): ";
 	string registeredID;
 	cin >> registeredID;
-	cout << "Please enter a password: ";
+	cout << "Please enter a password (NO SPACES): ";
 	string registeredPassword;
 	cin >> registeredPassword;
 
