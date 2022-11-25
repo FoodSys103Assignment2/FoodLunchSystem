@@ -1,2 +1,2 @@
 ﻿  FoodLunchSystem.cpp
-C:\Users\270238705\OneDrive - UP Education\Desktop\FoodLunchSystem\FoodLunchSystem\FoodLunchSystem.cpp(284): error C4700: uninitialized local variable 'cost' used
+  FoodLunchSystem.vcxproj -> C:\Users\270238705\OneDrive - UP Education\Desktop\FoodLunchSystem\x64\Debug\FoodLunchSystem.exe
