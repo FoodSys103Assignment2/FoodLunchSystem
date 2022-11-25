@@ -16,7 +16,7 @@ bool foodMenu(int& cost);
 bool ingridentsList();
 bool viewOrder();
 void clearOrder(); 
-bool payment(int totalFunds,int Cost);
+bool payment(int totalFunds,int cost);
 void menu();
 void line();
 bool drinksMenu();
@@ -353,11 +353,23 @@ bool ingridentsList()
 	return false;
 }
 
-bool payment(int totalFunds, int Cost) {
+bool payment(int totalFunds, int cost) {
+	char finalTime;
 	cout << "\n\n";
 	line();
 	cout << "Payment\n\ntotal funds: " << totalFunds << "\n\n";
-	cout << "Your total is: " << Cost <<"\n\n";
+	cout << "Your total is: " << cost <<"\n\n";
+	cout << "[P]ay\n[B]ack\n\n";
+	cin >> finalTime;
+
+	if (finalTime == 'p') {
+		totalFunds = totalFunds - cost;
+		cost = 0;
+		clearOrder();
+	}
+	else {
+		return 0;
+	}
 	return 0;
 }
 
