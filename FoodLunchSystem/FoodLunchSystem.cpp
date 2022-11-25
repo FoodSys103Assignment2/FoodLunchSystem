@@ -30,16 +30,40 @@ int main()
 	// while loop to for running the program until the user wants to end stop the application
 	while (1)
 	{
+		int counter = 0;
+		string arrayStorage[99];
+		string fileLines;
+		string fundLine;
+		ifstream openTheFile("./registeredAccounts/user-" + ID + ".deeez");
+		if (openTheFile.is_open())
+		{
+			while (getline(openTheFile, fileLines)) {
+				arrayStorage[counter] = fileLines;
+				counter++;
+				fundLine = arrayStorage[2];
+			}
+			openTheFile.close();
+		}
+		try
+		{
+			totalFunds = stoi(fundLine);
+		}
+		catch (...)
+		{
+			cout << "break \"" << fundLine << "\"\n\n";
+		}
 		// Prints correct responses depending on if a user is signed in or not
 		line();
 		cout << "Main Menu\n";
 		if (!ID.empty())
 		{
 			cout << "\n\n\nCurrent User Is: " << ID << "\n";
+			cout << totalFunds << "\n";
 		}
 		else
 		{
 			cout << "\n\n\nNo User Signed In\n";
+			cout << totalFunds << "\n";
 		}
 		line();
 
