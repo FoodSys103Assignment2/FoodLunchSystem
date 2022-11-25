@@ -139,20 +139,21 @@ string userLogin()
 {
 loginStart:
 	int line = 0;
-	string userInfo[2];
+	string userInfo[999];
 	string info;
-
+	string theusersId;
 	cout << "Input ID:";
-	string ID;
-	cin >> ID;
+	string loginId;
+	cin >> loginId;
 
-	ifstream openfile("./registeredAccounts/user-" + ID + ".deeez");
+	ifstream openfile("./registeredAccounts/user-" + loginId + ".deeez");
 	if (openfile.is_open())
 	{
 		while (getline(openfile, info)) {
 			// Output the text from the file
 			userInfo[line] = info;
 			line++;
+			theusersId = userInfo[1];
 		}
 		openfile.close();
 	}
@@ -172,14 +173,14 @@ loginStart:
 
 	if (actualPassword == userInfo[1])
 	{
-		cout << "Welcome student " << ID << "\n";
+		cout << "Welcome student " << loginId << "\n";
 	}
 	else
 	{
 		cout << "Wrong password try again\n";
 		goto loginStart;
 	}
-	return ID;
+	return loginId;
 }
 
 // function for registering an account of a new user.
