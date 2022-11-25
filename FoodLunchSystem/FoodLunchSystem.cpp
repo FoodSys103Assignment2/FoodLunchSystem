@@ -54,7 +54,7 @@ int main()
 		}
 		// Prints correct responses depending on if a user is signed in or not
 		line();
-		cout << "Main Menu\n";
+		cout << "Main Menu \n";
 		if (!ID.empty())
 		{
 			cout << "\n\n\nCurrent User Is: " << ID << "\n";
