@@ -51,6 +51,7 @@ int main()
 		}
 		catch (...)
 		{
+			cout << "break";
 		}
 		// Prints correct responses depending on if a user is signed in or not
 		line();
