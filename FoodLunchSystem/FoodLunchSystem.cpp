@@ -136,11 +136,30 @@ int main()
 // function for displaying account settings and billing info.
 void accountMenu(string ID)
 {
+	int counter = 0;
+	string arrayStorage[99];
+	string fileLines;
+	string fundLine;
+	ifstream openTheFile("./registeredAccounts/user-" + ID + ".deeez");
+	if (openTheFile.is_open())
+	{
+		while (getline(openTheFile, fileLines)) {
+			arrayStorage[counter] = fileLines;
+			counter++;
+		}
+		openTheFile.close();
+	}
+
+	
+
 	string currentAccount = "./registeredAccounts/user-" + ID + ".deeez";
 	fstream addInfo;
 
 	string accountInfo;
 	int accountInput;
+
+
+
 	if (ID == "")
 	{
 		cout << "No user is currently signed in\n";
@@ -149,17 +168,22 @@ void accountMenu(string ID)
 	{
 		cout << "User:" << ID << "\n";
 	}
-	cout << "[1] Add funds to account\n[2] Billing info\n\nInput: ";
+	cout << "[1] Add funds to account\n[2] Go back\n\nInput: ";
 	cin >> accountInput;
 	
 	if (accountInput == 1)
-	{	
+	{
+		ofstream clearOpen("./registeredAccounts/user-" + ID + ".deeez");
+		if (clearOpen.is_open())
+		{
+			clearOpen.close();
+		}
 		cout << "Enter how much do you want to add to your funds: ";
 		cin >> accountInfo;
 		addInfo.open(currentAccount, ios::app);
 		if (addInfo.is_open())
 		{
-			addInfo << "\n" << accountInfo << "\n";
+			addInfo << arrayStorage[0] << "\n" << arrayStorage[1] << "\n" << accountInfo << "\n";
 			addInfo.close();
 		}
 	}
