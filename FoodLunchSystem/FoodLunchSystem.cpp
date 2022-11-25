@@ -16,7 +16,7 @@ bool foodMenu(int& cost);
 bool ingridentsList();
 bool viewOrder();
 void clearOrder(); 
-bool payment(int totalFunds,int cost);
+bool payment(int totalFunds,int cost, string ID);
 void menu();
 void line();
 bool drinksMenu();
@@ -51,7 +51,6 @@ int main()
 		}
 		catch (...)
 		{
-			cout << "break";
 		}
 		// Prints correct responses depending on if a user is signed in or not
 		line();
@@ -60,12 +59,12 @@ int main()
 		if (!ID.empty())
 		{
 			cout << "\n\n\nCurrent User Is: " << ID << "\n";
-			cout << totalFunds << "\n";
+			cout << "$" << totalFunds << "\n";
 		}
 		else
 		{
 			cout << "\n\n\nNo User Signed In\n";
-			cout << totalFunds << "\n";
+			cout << "$" << totalFunds << "\n";
 		}
 		line();
 
@@ -100,7 +99,7 @@ int main()
 				if (clearCheck == 'c'){clearOrder();}
 				else if (clearCheck == 'p')
 				{
-					payment(totalFunds, costOfFood);
+					payment(totalFunds, costOfFood, ID);
 				}
 				else {
 					break;
@@ -150,15 +149,11 @@ void accountMenu(string ID)
 		openTheFile.close();
 	}
 
-	
-
 	string currentAccount = "./registeredAccounts/user-" + ID + ".deeez";
 	fstream addInfo;
 
 	string accountInfo;
 	int accountInput;
-
-
 
 	if (ID == "")
 	{
@@ -378,7 +373,24 @@ bool ingridentsList()
 	return false;
 }
 
-bool payment(int totalFunds, int cost) {
+bool payment(int totalFunds, int cost, string ID) {
+	int counter = 0;
+	string arrayStorage[99];
+	string fileLines;
+	string fundLine;
+	ifstream openTheFile("./registeredAccounts/user-" + ID + ".deeez");
+	if (openTheFile.is_open())
+	{
+		while (getline(openTheFile, fileLines)) {
+			arrayStorage[counter] = fileLines;
+			counter++;
+		}
+		openTheFile.close();
+	}
+	
+	string currentAccount = "./registeredAccounts/user-" + ID + ".deeez";
+	fstream addInfo;
+
 	char finalTime;
 	cout << "\n\n";
 	line();
@@ -388,9 +400,20 @@ bool payment(int totalFunds, int cost) {
 	cin >> finalTime;
 
 	if (finalTime == 'p') {
+		ofstream clearOpen("./registeredAccounts/user-" + ID + ".deeez");
+		if (clearOpen.is_open())
+		{
+			clearOpen.close();
+		}
 		totalFunds = totalFunds - cost;
 		cost = 0;
 		clearOrder();
+		addInfo.open(currentAccount, ios::app);
+		if (addInfo.is_open())
+		{
+			addInfo << arrayStorage[0] << "\n" << arrayStorage[1] << "\n" << totalFunds << "\n";
+			addInfo.close();
+		}
 	}
 	else {
 		return 0;
