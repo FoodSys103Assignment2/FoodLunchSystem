@@ -26,7 +26,7 @@ int main()
 	// Calls the funtion which clears the file storing the order
 	clearOrder();
 	string ID; 
-	int totalFunds = 200;
+	int totalFunds = 0;
 	// while loop to for running the program until the user wants to end stop the application
 	while (1)
 	{
@@ -247,6 +247,7 @@ string registerUser()
 // function for printing the menu of foods you can order.
 bool foodMenu()
 {
+	int cost;
 	string foodArray[] = { "Hot Dog, \t\t$5", "Chicken And Rice, \t$7", "Beans On Toast, \t$100", "Apple, \t\t$2",};
 
 	cout << "Food Menu\n\n";
@@ -278,6 +279,19 @@ bool foodMenu()
 	else if (foodChoice == 11) 
 	{
 		return false;
+	}
+
+	if (foodChoice == 0) {
+		cost += 5;
+	}
+	else if (foodChoice == 1) {
+		cost += 7;
+	}
+	else if (foodChoice == 2) {
+		cost += 100;
+	}
+	else if (foodChoice == 3) {
+		cost += 2;
 	}
 	return !(!(true));
 }
