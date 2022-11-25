@@ -67,7 +67,7 @@ int main()
 			line();
 			cout << "Current order\n\n";
 			viewOrder();
-			cout << "\n\n[C]lear order\n[E]xit\n\n";
+			cout << "\n\n[C]lear order\n[P]ay\n[E]xit\n\n";
 				char clearCheck; 
 				cin >> clearCheck; 
 				if (clearCheck == 'c'){clearOrder();}
