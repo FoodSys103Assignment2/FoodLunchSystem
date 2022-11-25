@@ -55,6 +55,7 @@ int main()
 		// Prints correct responses depending on if a user is signed in or not
 		line();
 		cout << "Main Menu \n";
+
 		if (!ID.empty())
 		{
 			cout << "\n\n\nCurrent User Is: " << ID << "\n";
@@ -238,7 +239,7 @@ string registerUser()
 	{
 		return "";
 	}
-	newFile << "id:" << registeredID << "\npassword:" << registeredPassword;
+	newFile << "id:" << registeredID << "\npassword:" << registeredPassword << "\n0";
 	newFile.close();
 	return registeredID;
 }
