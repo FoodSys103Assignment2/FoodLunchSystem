@@ -12,7 +12,7 @@ using namespace std;
 void accountMenu(string ID);
 string userLogin();
 string registerUser();
-bool foodMenu();
+bool foodMenu(int& cost);
 bool ingridentsList();
 bool viewOrder();
 void clearOrder(); 
@@ -27,6 +27,7 @@ int main()
 	clearOrder();
 	string ID; 
 	int totalFunds = 0;
+	int costOfFood = 0;
 	// while loop to for running the program until the user wants to end stop the application
 	while (1)
 	{
@@ -79,13 +80,13 @@ int main()
 			while (true)
 			{
 				line();
-				if (!foodMenu())
+				if (!foodMenu(costOfFood))
 				{
 					break;
 				}
 				else
 				{
-					foodMenu();
+					foodMenu(costOfFood);
 				}
 			}
 			break;
@@ -245,9 +246,8 @@ string registerUser()
 }
 
 // function for printing the menu of foods you can order.
-bool foodMenu()
+bool foodMenu(int& cost)
 {
-	int cost;
 	string foodArray[] = { "Hot Dog, \t\t$5", "Chicken And Rice, \t$7", "Beans On Toast, \t$100", "Apple, \t\t$2",};
 
 	cout << "Food Menu\n\n";
