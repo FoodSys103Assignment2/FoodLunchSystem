@@ -16,6 +16,7 @@ bool foodMenu();
 bool ingridentsList();
 bool viewOrder();
 void clearOrder(); 
+bool payment(int totalFunds);
 void menu();
 void line();
 bool drinksMenu();
@@ -25,7 +26,7 @@ int main()
 	// Calls the funtion which clears the file storing the order
 	clearOrder();
 	string ID; 
-
+	int totalFunds = 200;
 	// while loop to for running the program until the user wants to end stop the application
 	while (1)
 	{
@@ -71,6 +72,10 @@ int main()
 				char clearCheck; 
 				cin >> clearCheck; 
 				if (clearCheck == 'c'){clearOrder();}
+				else if (clearCheck == 'p')
+				{
+					payment(totalFunds);
+				}
 				else {
 					break;
 				}
@@ -307,6 +312,13 @@ bool ingridentsList()
 		line();
 	}
 	return false;
+}
+
+bool payment(int totalFunds) {
+	cout << "\n\n";
+	line();
+	cout << "Payment\n\ntotal funds: " << totalFunds << "\n\n";
+	return 0;
 }
 
 // function for viewing contents from the current order file.
